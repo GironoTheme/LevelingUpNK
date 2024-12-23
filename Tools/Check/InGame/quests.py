@@ -11,13 +11,13 @@ class Quests:
             return image.matching(screen + "accept.png",
                                   temp + "accept.png",
                                   True,
-                                  area_of_screenshot=(1753, 121, 1808, 133))
+                                  area_of_screenshot=(1755, 121, 1809, 133))
 
         def complete():
             return image.matching(screen + "complete.png",
                                   temp + "complete.png",
                                   True,
-                                  area_of_screenshot=(1744, 121, 1817, 133))
+                                  area_of_screenshot=(1746, 121, 1818, 133))
 
         states = [accept, complete]
 
