@@ -16,13 +16,19 @@ from counter import increment_counter
 
 
 class UnusualQuests:
+    def __init__(self):
+        self.variable_for_steed = 0
+        self.variable_for_glaider = 0
+
     def steed(self):
-        for_quests.click_on_quest()
-        sleep(0.7)
-        accept()
-        quit_steeds()
-        sleep(0.7)
-        for_quests.click_on_quest()
+        if self.variable_for_steed == 0:
+            for_quests.click_on_quest()
+            sleep(0.7)
+            accept()
+            quit_steeds()
+            sleep(0.7)
+            for_quests.click_on_quest()
+        self.variable_for_steed = 1
 
     def glaider(self):
         def skip_text():
@@ -36,17 +42,23 @@ class UnusualQuests:
             func(*args, **kwargs)
             skip_text()
 
-        execute_with_skip(for_quests.click_on_quest)
-        sleep(0.7)
-        execute_with_skip(accept)
-        sleep(0.7)
-        execute_with_skip(accept)
-        execute_with_skip(quit_steeds)
-        sleep(0.7)
-        execute_with_skip(for_quests.click_on_quest)
+        if self.variable_for_glaider == 0:
+            execute_with_skip(for_quests.click_on_quest)
+            sleep(0.7)
+            execute_with_skip(accept)
+            sleep(0.7)
+            execute_with_skip(accept)
+            execute_with_skip(quit_steeds)
+            sleep(0.7)
+            execute_with_skip(for_quests.click_on_quest)
 
-        sleep(35)
-        execute_with_skip(for_quests.click_on_ok)
+            for i in range(3):
+                skip_text()
+                sleep(15)
+
+            execute_with_skip(for_quests.click_on_ok)
+
+        self.variable_for_glaider = 1
 
     def apply_appearance_of_weapon(self):
         for_quests.click_on_quest()

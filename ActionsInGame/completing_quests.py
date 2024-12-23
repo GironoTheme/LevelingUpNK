@@ -18,8 +18,8 @@ class CompletingQuests:
     def __init__(self):
         self.special_quests = {
             1: click_on_start,
-            7: unusual_quests.steed,
-            10: unusual_quests.glaider,
+            8: unusual_quests.steed,
+            11: unusual_quests.glaider,
             16: in_inventory.dress_up,
             18: skills.install_skills,
             23: unusual_quests.apply_appearance_of_weapon,
